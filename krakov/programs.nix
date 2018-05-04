@@ -45,16 +45,16 @@
  
     # Development 
     git cmake gnumake gcc stack solc
-    nix-repl nixops nodejs-8_x octave
+    nix-repl nodejs-8_x octave
     docker virtualbox
     pythonPackages.virtualenv
     haskellPackages.stylish-haskell
-    haskellPackages.ghc-mod
+    #haskellPackages.ghc-mod
 
     # Desktop environment
     firefox google-chrome haskellPackages.xmobar
     libreoffice vlc scrot xbindkeys xorg.xbacklight
-    geany gnome3.defaultIconTheme
+    geany gnome3.defaultIconTheme tdesktop
     keybase recordmydesktop rtorrent
 
     # Linux
