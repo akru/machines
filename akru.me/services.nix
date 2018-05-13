@@ -24,6 +24,8 @@
 
     ipfs.enable = true;
 
+    syncthing.enable = true;
+
     nginx = {
       enable = true;
       recommendedTlsSettings   = true;
