@@ -15,7 +15,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+    initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
     initrd.luks.devices."root".device = "/dev/disk/by-uuid/2def1911-273b-456e-a723-634e0685abd1";
 
     kernelModules = [ "kvm-intel" "fbcon" ];
@@ -38,6 +38,7 @@
   zramSwap.enable = true;
 
   hardware = {
+    enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
 
     trackpoint = {

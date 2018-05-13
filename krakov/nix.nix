@@ -9,7 +9,7 @@
   nix = {
 
     allowedUsers = [ "@wheel" ];
-    useSandbox = true;
+#    useSandbox = true;
 
     daemonNiceLevel   = 19;
     daemonIONiceLevel = 7;
@@ -18,7 +18,7 @@
     binaryCaches = [
       https://cache.nixos.org
       https://hydra.aira.life
-      https://hydra.iohk.io
+#      https://hydra.iohk.io
     ];
 
     binaryCachePublicKeys = [

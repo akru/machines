@@ -5,7 +5,6 @@
 ###
 
 {
-
   imports = [
     ./nix.nix
     ./i18n.nix

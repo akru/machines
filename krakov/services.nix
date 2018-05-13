@@ -24,6 +24,13 @@
       passwordAuthentication = false;
     };
 
+    # Enable SOCKS proxy via akru.me
+    autossh.sessions = [ {
+      name = "akru.me";
+      user = "akru";
+      extraArguments = "-N -D9050 root@akru.me";
+    } ];
+
     # udev extra config
     udev = {
       extraRules = ''
@@ -67,10 +74,7 @@
     # Cjdns routing service.
     cjdns = {
       enable = true;
-      ETHInterface = {
-        bind = "all";
-        beacon = 1;
-      };
+      ETHInterface.bind = "all";
       UDPInterface = {
         bind = "0.0.0.0:42000";
         connectTo = {
@@ -79,22 +83,23 @@
             password = "cr36pn2tp8u91s672pw2uu61u54ryu8";
             publicKey = "35mdjzlxmsnuhc30ny4rhjyu5r1wdvhb09dctd1q5dcbq6r40qs0.k";
           };
-          # Airalab/WestEU
-          #"52.232.72.83:31259" = {
-          #  password = "tt3yb4613wgh3sgfsgkg1fvk24k6hnk";
-          #  publicKey = "jyl980gs5513dw5x19qp3khb6337ljsx3sgwbsmnsvvyb5jdcw90.k";
-          #};
         };
       };
       #ipTunnel.outgoingConnections = [ "35mdjzlxmsnuhc30ny4rhjyu5r1wdvhb09dctd1q5dcbq6r40qs0.k" ];
     };
 
+    # Inter planetary file system
+    ipfs.enable = true;
+
+    # Decentralized synchonization
+    syncthing = {
+      enable = true;
+      user = "akru";
+      dataDir = "/home/akru/.syncthing";
+    };
+
     # RXVTerminal daemon
     urxvtd.enable = true;
-
-    # DNSCrypt forwarder
-    #dnscrypt-proxy.enable = true;
-    #nscd.enable = false;
 
     # Enable TREZOR support
     trezord.enable = true;

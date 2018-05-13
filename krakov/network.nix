@@ -24,12 +24,14 @@
         fcb9:394a:2837:2d0c:ca26:1f39:5072:6d3b wh1080
         fcc9:92ed:1462:3c85:c78c:6e8b:2175:16d7 sove32
         fc7a:a2d4:e970:6e1c:2e9c:eee2:74ef:85a1 pole14
-        fc53:68fb:5f29:c4e5:a846:1e1f:b9c8:1c99 hydra
+        fc8a:63db:c677:9c93:ac4d:6048:53f7:21d3 duna14
+        fc0a:f6f7:392f:941c:3612:1267:75cb:1715 doondle
+        fce9:849c:a311:845b:f3a9:a8fc:7b34:4ab6 hydra
       '';
 
     firewall = {
       allowPing = true;
-      allowedTCPPorts = [ 4001 51413 ];
+      allowedTCPPorts = [ 8080 4001 42000 ];
     };
 
     wireless = {
@@ -38,4 +40,5 @@
     };
 
   };
+
 }
