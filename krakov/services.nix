@@ -96,6 +96,7 @@
       enable = true;
       user = "akru";
       dataDir = "/home/akru/.syncthing";
+      openDefaultPorts = true;
     };
 
     # RXVTerminal daemon

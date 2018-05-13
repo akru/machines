@@ -24,7 +24,10 @@
 
     ipfs.enable = true;
 
-    syncthing.enable = true;
+    syncthing = {
+      enable = true;
+      openDefaultPorts = true;
+    };
 
     nginx = {
       enable = true;
