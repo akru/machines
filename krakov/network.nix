@@ -27,15 +27,27 @@
         fc8a:63db:c677:9c93:ac4d:6048:53f7:21d3 duna14
         fc0a:f6f7:392f:941c:3612:1267:75cb:1715 doondle
         fce9:849c:a311:845b:f3a9:a8fc:7b34:4ab6 hydra
+        fc42:29df:dd98:605c:9b01:1ffe:e03a:54ee lighthouse
+        fc5a:fd8d:96b5:14d2:944e:6a53:2be:1b95  citadel
+        fcaa:9c13:6ea4:4b92:8b9b:9:2390:52c1    polkadot
+        fcc5:8c45:cede:ac0d:e9c4:aba4:1ed5:895  aira-teamcity
+        fca7:7227:1d8e:3757:c2fe:f758:7fcd:2cf3 drone-sim-01
+        fc8f:c559:475e:fa39:e6fc:2b12:5c43:7167 aira-iot-01
+  	fcb0:5ae8:6bf2:f734:8871:ece3:79ff:42b3 aira-iot-02
+        fcbd:1e78:bd7a:650e:6ca9:7aa6:b844:7a00 fftlt-spor33
+        fc8f:1cb:fb66:efbe:77c9:594d:f638:8390  hydra2
+        fc0e:0f69:1e44:603e:0e14:4ec8:901a:ab3e victory
       '';
 
     firewall = {
       allowPing = true;
-      allowedTCPPorts = [ 8080 4001 42000 ];
+      allowedTCPPorts = [ 8080 4001 5000 42000 62820 ];
+      allowedUDPPorts = [ 62882 5353 ];
     };
 
     wireless = {
       enable = true;
+      interfaces = [ "wlan0" ];
       networks = import ./wireless.nix;
     };
 

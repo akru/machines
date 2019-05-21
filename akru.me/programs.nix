@@ -13,7 +13,7 @@
     zsh = {
       enable = true;
       enableCompletion = true;
-      enableAutosuggestions = true;
+      autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       ohMyZsh = {
         enable = true;
@@ -23,7 +23,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim git zsh htop nmap ncdu
+    vim git zsh htop nmap ncdu screen nodejs-10_x
   ];
 
 }

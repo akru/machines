@@ -18,6 +18,8 @@
 
   services = {
 
+    nscd.enable = false;
+
     # Enable the OpenSSH daemon.
     openssh = {
       enable = true;
@@ -28,7 +30,7 @@
     autossh.sessions = [ {
       name = "akru.me";
       user = "akru";
-      extraArguments = "-N -D9050 root@akru.me";
+      extraArguments = "-N -D9051 root@strasbourg";
     } ];
 
     # udev extra config
@@ -62,6 +64,14 @@
       servers = [ "0.pool.ntp.org" "1.pool.ntp.org" ];
     };
 
+#    iodine.clients = {
+#      akru = {
+#        server = "a.akru.me";
+#        relay = "10.240.0.100";
+#        extraConfig = "-M 200 -I 1 -L 0 -m 90";
+#      };
+#    };
+
     # Enable print support
     #printing.enable = true;
     
@@ -74,7 +84,10 @@
     # Cjdns routing service.
     cjdns = {
       enable = true;
-      ETHInterface.bind = "all";
+      ETHInterface = {
+        bind = "all";
+        beacon = 2;
+      };
       UDPInterface = {
         bind = "0.0.0.0:42000";
         connectTo = {
@@ -88,8 +101,16 @@
       #ipTunnel.outgoingConnections = [ "35mdjzlxmsnuhc30ny4rhjyu5r1wdvhb09dctd1q5dcbq6r40qs0.k" ];
     };
 
+    # Enable TOR proxy
+    tor.enable = true;
+    tor.client.enable = true;
+    tor.client.dns.enable = true;
+
     # Inter planetary file system
-    ipfs.enable = true;
+    ipfs = {
+      enable = true;
+      extraFlags = [ "--enable-namesys-pubsub" ];
+    };
 
     # Decentralized synchonization
     syncthing = {
@@ -98,9 +119,6 @@
       dataDir = "/home/akru/.syncthing";
       openDefaultPorts = true;
     };
-
-    # RXVTerminal daemon
-    urxvtd.enable = true;
 
     # Enable TREZOR support
     trezord.enable = true;
@@ -140,12 +158,11 @@
 
   # Enable fonts
   fonts = {
+    enableCoreFonts = true;
     enableFontDir = true;
     fonts = with pkgs; [
-      corefonts
-      vistafonts
+      fira-code
       dejavu_fonts
-      terminus_font
       ubuntu_font_family
     ];
   };

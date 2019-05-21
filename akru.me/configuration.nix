@@ -18,7 +18,7 @@
 
   system = {
     # The NixOS release to be compatible with for stateful data such as databases.
-    stateVersion = "18.03";
+    stateVersion = "19.03";
 
     # Enable periodic distribution upgrades
     autoUpgrade.enable = true;

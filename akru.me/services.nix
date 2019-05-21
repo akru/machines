@@ -22,7 +22,10 @@
       confFile = "/etc/cjdroute.conf";
     };
 
-    ipfs.enable = true;
+    ipfs = {
+      enable = false;
+      extraFlags = [ "--enable-namesys-pubsub" ];
+    };
 
     syncthing = {
       enable = true;
@@ -34,30 +37,40 @@
       recommendedTlsSettings   = true;
       recommendedGzipSettings  = true;
       recommendedOptimisation  = true;
-
       virtualHosts = {
         "akru.me" = {
           forceSSL = true;
           enableACME = true;
-
           locations = {
             "/keybase.txt".root = "/var/www";
-
-            "/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4/".root = "/var/www";
-
+            "/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4".root = "/var/www";
             "/".extraConfig = ''
-              return 301 https://$host/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4/;
+              return 301 https://akru.me/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4;
             '';
           };
         };
 
         "h.akru.me" = {
           locations = {
-            "/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4/".root = "/var/www";
-
             "/".extraConfig = ''
-              return 301 http://$host/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4/;
+              return 301 https://akru.me/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4;
             '';
+          };
+        };
+
+        "grin.akru.me" = {
+          forceSSL = true;
+          enableACME = true;
+
+          locations."/".proxyPass = "http://127.0.0.1:3415/";
+        };
+
+        "robonomics.akru.me" = {
+          forceSSL = true;
+          enableACME = true;
+          locations."/" = {
+              proxyPass = "http://127.0.0.1:9944/";
+              proxyWebsockets = true;
           };
         };
       };

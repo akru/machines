@@ -6,7 +6,7 @@
 ##
 ###
 
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
 
@@ -17,6 +17,10 @@
 
     initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
     initrd.luks.devices."root".device = "/dev/disk/by-uuid/2def1911-273b-456e-a723-634e0685abd1";
+
+    cleanTmpDir = true;
+
+    #extraModulePackages = with pkgs.linuxPackages; [ batman_adv rtl8192eu ];
 
     kernelModules = [ "kvm-intel" "fbcon" ];
   };
