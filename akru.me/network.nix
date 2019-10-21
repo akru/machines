@@ -15,8 +15,8 @@
 
     firewall = {
       allowPing = true;
-      allowedTCPPorts = [ 80 443 4001 30333 30363 3414 31163 ];
-      allowedUDPPorts = [ 53741 58160 ];
+      allowedTCPPorts = [ 80 443 31163 ];
+      allowedUDPPorts = [ 53741 ];
     };
 
     # Enable IPv6
