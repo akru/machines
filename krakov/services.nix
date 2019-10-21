@@ -30,7 +30,7 @@
     autossh.sessions = [ {
       name = "akru.me";
       user = "akru";
-      extraArguments = "-N -D9051 root@strasbourg";
+      extraArguments = "-N -D9051 akru.me";
     } ];
 
     # udev extra config
@@ -92,7 +92,7 @@
         bind = "0.0.0.0:42000";
         connectTo = {
           # h.akru.me/FR/Strasbourg
-          "164.132.111.49:53741" = {
+          "95.216.202.55:53741" = {
             password = "cr36pn2tp8u91s672pw2uu61u54ryu8";
             publicKey = "35mdjzlxmsnuhc30ny4rhjyu5r1wdvhb09dctd1q5dcbq6r40qs0.k";
           };

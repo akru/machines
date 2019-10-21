@@ -39,20 +39,20 @@
     # Tools
     vim zsh screen tmux htop nmap mc ncdu
     unzip sqlite rrdtool ntfs3g cifs-utils
-    wireshark yrd jq batctl alfred
+    wireshark yrd jq
 
     # Security
     gnupg gnupg1compat encfs mosh
  
     # Development 
-    git cachix cmake gnumake gcc solc nodejs-10_x docker virtualbox
+    git cmake gnumake gcc solc nodejs docker virtualbox
+    qt5.full qtcreator
 
     # Desktop environment
     firefox google-chrome brave rxvt_unicode
     vlc scrot xbindkeys xorg.xbacklight
     geany gnome3.defaultIconTheme tdesktop
     keybase recordmydesktop transmission-gtk
-    parity-beta go-ethereum ethabi
   ]
     ++ (with haskellPackages; [ xmobar hlint stylish-haskell ]);
 

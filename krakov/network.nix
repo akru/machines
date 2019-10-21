@@ -41,7 +41,7 @@
 
     firewall = {
       allowPing = true;
-      allowedTCPPorts = [ 8080 4001 5000 42000 62820 ];
+      allowedTCPPorts = [ 8080 4001 5000 42000 62820 9090 ];
       allowedUDPPorts = [ 62882 5353 ];
     };
 

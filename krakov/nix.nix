@@ -23,7 +23,7 @@
       https://akru.cachix.org
       https://pact.cachix.org
       https://nixcache.reflex-frp.org
-      http://nixcache.kadena.io
+#      http://nixcache.kadena.io
     ];
 
     binaryCachePublicKeys = [
@@ -33,7 +33,7 @@
       "akru.cachix.org-1:zW6wBUC613W7ADddLhpIq1/6rp35Bq1sIAg0MMVelrk="
       "pact.cachix.org-1:cg1bsryGrHnQzqEp52NcHq4mBBL+R25XbR2Q/I/vQ8Y="
       "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
-      "kadena-cache.local-1:8wj8JW8V9tmc5bgNNyPM18DYNA1ws3X/MChXh1AQy/Q="
+#      "kadena-cache.local-1:8wj8JW8V9tmc5bgNNyPM18DYNA1ws3X/MChXh1AQy/Q="
     ];
 
   };
