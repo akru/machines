@@ -23,7 +23,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim git zsh htop nmap ncdu screen nodejs-10_x
+    vim git zsh htop ncdu screen nodejs-10_x
   ];
 
 }

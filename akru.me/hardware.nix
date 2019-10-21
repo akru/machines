@@ -25,21 +25,9 @@
   };
 
   fileSystems."/" =
-    { device  = "/dev/disk/by-uuid/cff2761d-51b5-4d94-87b9-0df0f243198d";
+    { device  = "/dev/disk/by-uuid/c9bd6699-9388-4062-b1a5-ed7e396213d7";
       fsType  = "btrfs";
       options = [ "compress=lzo" "ssd" ];
-    };
-
-  fileSystems."/var/www" =
-    { device = "/dev/disk/by-uuid/cff2761d-51b5-4d94-87b9-0df0f243198d";
-      fsType = "btrfs";
-      options = [ "subvol=var/www" ];
-    };
-
-  fileSystems."/var/lib/ipfs" =
-    { device = "/dev/disk/by-uuid/cff2761d-51b5-4d94-87b9-0df0f243198d";
-      fsType = "btrfs";
-      options = [ "subvol=var/lib/ipfs" ];
     };
 
   zramSwap.enable = true;

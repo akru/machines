@@ -3,6 +3,7 @@
 ##  Services provided by akru.me machine
 ##
 ###
+{ pkgs, ... }:
 
 {
   services = {
@@ -22,11 +23,6 @@
       confFile = "/etc/cjdroute.conf";
     };
 
-    ipfs = {
-      enable = false;
-      extraFlags = [ "--enable-namesys-pubsub" ];
-    };
-
     syncthing = {
       enable = true;
       openDefaultPorts = true;
@@ -44,6 +40,9 @@
           locations = {
             "/keybase.txt".root = "/var/www";
             "/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4".root = "/var/www";
+            "/fftlt".extraConfig = ''
+              return 301 https://ipfs.io/ipfs/QmUkQADLMQ2ErtyWJT9TVYkCCNZU7EyioZxfmn2o5JUEwM;
+            '';
             "/".extraConfig = ''
               return 301 https://akru.me/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4;
             '';
@@ -55,22 +54,6 @@
             "/".extraConfig = ''
               return 301 https://akru.me/ipns/QmWboFP8XeBtFMbNYK3Ne8Z3gKFBSR5iQzkKgeNgQz3dz4;
             '';
-          };
-        };
-
-        "grin.akru.me" = {
-          forceSSL = true;
-          enableACME = true;
-
-          locations."/".proxyPass = "http://127.0.0.1:3415/";
-        };
-
-        "robonomics.akru.me" = {
-          forceSSL = true;
-          enableACME = true;
-          locations."/" = {
-              proxyPass = "http://127.0.0.1:9944/";
-              proxyWebsockets = true;
           };
         };
       };
