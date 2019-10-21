@@ -1,6 +1,6 @@
 ###
 ##
-##  akru.me machine hardware related properties
+##  dot.akru.me machine hardware related properties
 ##
 ##  Hetzner Cloud CX21 VPS 
 ##
@@ -25,7 +25,7 @@
   };
 
   fileSystems."/" =
-    { device  = "/dev/disk/by-uuid/c9bd6699-9388-4062-b1a5-ed7e396213d7";
+    { device  = "/dev/disk/by-uuid/d5f92974-13d7-4cc4-9277-2b6c1f29c7f4";
       fsType  = "btrfs";
       options = [ "compress=lzo" "ssd" ];
     };
